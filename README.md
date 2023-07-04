@@ -1,3 +1,6 @@
+# to create new react app we will write this line in the power shell (click shift+rightClick) to open the powerShell 
+npx create-react-app newsapp
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
