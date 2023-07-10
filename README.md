@@ -74,3 +74,11 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 //To clear the cashe
 cntrl+shift+r
+
+business
+entertainment
+general
+health
+science
+sports
+technology
