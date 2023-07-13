@@ -89,7 +89,7 @@ export class News extends Component {
     console.log("render");
     return (
       <div className="container my-3">
-        <h1 className="text-center" style={{margin: "35px 0px;"}}>NewSy- Top Headline</h1>
+        <h1 className="text-center" style={{margin: "35px 0px"}}>NewSy- Top Headline</h1>
         {this.state.loading && <Spinner/>}
 
         {/* Cretaing a row */}
@@ -102,7 +102,7 @@ export class News extends Component {
           //  we have to give a unique 'key' , while returning else it will thorugh error
             return<div className="col-md-4" key={element.url}>
                     <NewsItem  title={element.title==null? "" : element.title} description={element.description==null? "" : element.description} imageUrl=
-                    {element.urlToImage} newsUrl={element.url}/>
+                    {element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name}/>
                   </div>
            })}
                       
