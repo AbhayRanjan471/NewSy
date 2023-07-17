@@ -16,16 +16,23 @@ export class News extends Component {
     pageSize: PropTypes.number,
     category: PropTypes.string,
   }
-   
-  constructor(){
+  
+  //this function makes the 1st letter of word capital
+  capitalizeFirstLetter = (string)=>{
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  constructor(props){
     // we have to call the super class whenevre we create a constructor else it will through error/
-    super();
+    super(props);
     console.log("Hello I m a constructor from News component");
     this.state ={
       articles: [],
       loading: true,
       page: 1
     }
+    //using this we are changing the title of our page , whenevr we click on any category on th news app
+    document.title = `${this.capitalizeFirstLetter(this.props.category)} - NewSy`;
   }
 
   async updateNews(pageNo){
@@ -73,18 +80,6 @@ export class News extends Component {
    handlePrevClick = async()=>{
     console.log("previous");
 
-    // let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=8e01be2e8ee9423a9fc0875c304e100f&page=${this.state.page-1}&pageSize=${this.props.pageSize}`; 
-    // //we will set the loading as true whever we will hit the url, at that time only loading will occure
-    // this.setState({loading: true});
-    // let data = await fetch(url); // async function will wait till for this promise to complete its work and then it will give its data
-    // let parsedData = await data.json();  
-    
-    // this.setState({
-    //   articles: parsedData.articles,
-    //   page: this.state.page-1,
-    //   loading: false
-    // })
-
     //setting the size of the page
     this.setState({page: this.state.page-1});
     //instead of writing the whole function agin we build a common function updateNews()
@@ -95,20 +90,6 @@ export class News extends Component {
    handleNextClick = async()=>{
     console.log("next");
 
-    // if(!(this.state.page+1 > Math.ceil(this.state.totalResults/this.props.pageSize))){
-    //   let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=8e01be2e8ee9423a9fc0875c304e100f&page=${this.state.page+1}&pageSize=${this.props.pageSize}`; 
-    //   //we will set the loading as true whever we will hit the url, at that time only loading will occure
-    //   this.setState({loading: true});
-    //   let data = await fetch(url); // async function will wait till for this promise to complete its work and then it will give its data
-    //   let parsedData = await data.json();  
-      
-    //   this.setState({
-    //     articles: parsedData.articles,
-    //     page: this.state.page+1,
-    //     //when we got the data we will set the loading as false
-    //     loading: false
-    //   })
-    // }
     this.setState({page: this.state.page+1});
     this.updateNews();
 
@@ -118,7 +99,7 @@ export class News extends Component {
     console.log("render");
     return (
       <div className="container my-3">
-        <h1 className="text-center" style={{margin: "35px 0px"}}>NewSy- Top Headline</h1>
+        <h1 className="text-center" style={{margin: "35px 0px"}}>NewSy- Top {this.capitalizeFirstLetter(this.props.category)} Headline</h1>
         {this.state.loading && <Spinner/>}
 
         {/* Cretaing a row */}
