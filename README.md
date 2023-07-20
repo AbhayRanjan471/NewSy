@@ -75,10 +75,9 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 //To clear the cashe
 cntrl+shift+r
 
-business
-entertainment
-general
-health
-science
-sports
-technology
+ //Adding Infinite scroll
+ https://www.npmjs.com/package/react-infinite-scroll-component
+
+ step1: pakege
+ npm i react-infinite-scroll-component
+ step2: selct the live example
