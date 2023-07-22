@@ -40,7 +40,7 @@ export class News extends Component {
     console.log("componentDidMount");
     this.props.setProgress(10);
     //this url is used to fetch the api
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=8e01be2e8ee9423a9fc0875c304e100f&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
     //we will set the loading as true whever we will hit the url, at that time only loading will occure
     this.props.setProgress(30);
     this.setState({loading: true});
@@ -109,7 +109,7 @@ export class News extends Component {
       
       
     //this url is used to fetch the api
-    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=8e01be2e8ee9423a9fc0875c304e100f&page=${this.state.page}&pageSize=${this.props.pageSize}`;
+    const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
      
     //using the facth api , which return a 'promise' so we will use async - await and here we are fatcing the data from the url using fetch()
     let data = await fetch(url); // async function will wait till for this promise to complete its work and then it will give its data
