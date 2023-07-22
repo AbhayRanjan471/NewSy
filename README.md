@@ -81,3 +81,6 @@ cntrl+shift+r
  step1: pakege
  npm i react-infinite-scroll-component
  step2: selct the live example
+
+ //Adding react top loading bar
+ https://www.npmjs.com/package/react-top-loading-bar
