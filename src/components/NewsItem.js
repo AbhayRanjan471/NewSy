@@ -1,4 +1,5 @@
 import React from 'react'
+ 
 
 const NewsItem = (props)=> {
 
@@ -9,7 +10,7 @@ const NewsItem = (props)=> {
           <div style={{display:'flex', justifyContent: 'flex-end', position: 'absolute', right:'0'}}>
             <span className="badge rounded-pill bg-danger" >{source}</span>
           </div>
-            <img src={imageUrl? imageUrl : "https://cdni.autocarindia.com/ExtraImages/20230705012252_maruti_suzuki_invicto.jpg"} className="card-img-top" alt="..."/>
+            <img src={imageUrl? imageUrl : require('../no_img.jpg')} className="card-img-top" alt="..."/>
             <div className="card-body">
                 <h5 className="card-title">{title} </h5>
                 <p className="card-text">{description}</p>

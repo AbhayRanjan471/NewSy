@@ -12,8 +12,7 @@ const News = (props)=> {
   const [loading ,setLoading] = useState(true);
   const [page, setpage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
-  // //using this we are changing the title of our page , whenevr we click on any category on th news app
-  // document.title = `${capitalizeFirstLetter(props.category)} - NewSy`;
+  
   
   //this function makes the 1st letter of word capital
   const capitalizeFirstLetter = (string)=>{
@@ -44,7 +43,11 @@ const News = (props)=> {
   }
 
   useEffect(() => {
+    //using this we are changing the title of our page , whenevr we click on any category on th news app
+    document.title = `${capitalizeFirstLetter(props.category)} - NewSy`;
      updateNews();
+     ////don't remove the below line
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   
    
@@ -64,11 +67,10 @@ const News = (props)=> {
 
   //Creating a fetch more function whih will help in infinte scroll , which will fetch the data
   const fetchMoreData = async () => {
-    setpage(page+1)
        
     //this url is used to fetch the api
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
-     
+    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page+1}&pageSize=${props.pageSize}`;
+    setpage(page+1);
     //using the facth api , which return a 'promise' so we will use async - await and here we are fatcing the data from the url using fetch()
     let data = await fetch(url); // async function will wait till for this promise to complete its work and then it will give its data
     //we have to parse the data to json
@@ -84,7 +86,7 @@ const News = (props)=> {
     return (
       <> 
         
-        <h1 className="text-center" style={{margin: "35px 0px"}}>NewSy- Top {capitalizeFirstLetter(props.category)} Headline</h1>
+        <h1 className="text-center" style={{margin: "35px 0px" , marginTop:'90px'}}>NewSy- Top {capitalizeFirstLetter(props.category)} Headline</h1>
         {loading && <Spinner/>}
 
         {/* https://codesandbox.io/s/yk7637p62z?file=/src/index.js:309-554 */}
