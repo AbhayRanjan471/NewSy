@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useEffect } from "react";
 import { useState } from "react";
+// import mode from "../App";
 
 const News = (props)=> {
 
@@ -83,9 +84,9 @@ const News = (props)=> {
 
   
     console.log("render");
+
     return (
       <> 
-        
         <h1 className="text-center" style={{margin: "35px 0px" , marginTop:'90px'}}>NewSy- Top {capitalizeFirstLetter(props.category)} Headline</h1>
         {loading && <Spinner/>}
 
@@ -107,7 +108,7 @@ const News = (props)=> {
               //  we have to give a unique 'key' , while returning else it will thorugh error
                 return<div className="col-md-4" key={element.url}>
                         <NewsItem  title={element.title==null? "" : element.title} description={element.description==null? "" : element.description} imageUrl=
-                        {element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name}/>
+                        {element.urlToImage} newsUrl={element.url} author={element.author} date={element.publishedAt} source={element.source.name} />
                       </div>
               })}             
             </div>

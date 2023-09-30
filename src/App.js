@@ -24,13 +24,14 @@ const App = ()=> {
  
   const [progress, setProgress] = useState(0);
 
+
    
      return (
       <>
       {/* We will wrap the whole content in the inside the Router tag, to use React router */}
       <Router>
          <div>
-           <NavBar/>
+           <NavBar />
            
            {/* Adding react top loading bar */}
             <LoadingBar
