@@ -1,0 +1,11 @@
+//Steps to download the project from Git and run 
+Step1: copy the clone link ie, the HTTP link
+Step2: create a folder , inside the folder do shift+rightClick
+Step3: a dialog box will appear , click on openPower Shell window here
+Step4: write the command " git clone shift+insert "
+  //OR 
+Step4: git clone paste the link
+ 
+Step5: git i  // in the VS code to install all the requirement which we have ignored using .gitignore
+step6: npm install // to install all the dependencies 
+step7: npm start //to run the project

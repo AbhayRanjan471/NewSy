@@ -9,7 +9,7 @@ import { useState } from "react";
 
 const News = (props)=> {
 
-  const [articles ,setArticles] = useState([]);
+  const [articles ,setArticles] = useState([]); 
   const [loading ,setLoading] = useState(true);
   const [page, setpage] = useState(1);
   const [totalResults, setTotalResults] = useState(0);
