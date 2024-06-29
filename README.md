@@ -1,3 +1,10 @@
+# To run this project just follow these steps
+step1: Download this project file
+step2: create a file name ".env.local " and paste the API key " REACT_APP_NEWS_API='8e01be2e8ee9423a9fc0875c304e100f' "
+step3: npm install //to download all the dependencies
+step4: npm start // to run the project
+
+
 # to create new react app we will write this line in the power shell (click shift+rightClick) to open the powerShell 
 npx create-react-app newsapp
 
